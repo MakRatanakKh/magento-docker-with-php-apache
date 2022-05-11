@@ -1,0 +1,27 @@
+bin/magento setup:install \
+--base-url=http://magento2test.localhost \
+--db-host=mysql_local \
+--db-name=magento_db_test1 \
+--db-user=root \
+--db-password=d6K9BDq3eJVg \
+--admin-firstname=Mr \
+--admin-lastname=Admin \
+--admin-email=admin@admin.com \
+--admin-user=admin \
+--admin-password=admin123 \
+--language=en_US \
+--currency=USD \
+--timezone=Asia/Phnom_Penh \
+--use-rewrites=1 \
+--search-engine=elasticsearch7 \
+--elasticsearch-host=elasticsearch \
+--elasticsearch-port=9200 \
+--elasticsearch-index-prefix=magento2 \
+--elasticsearch-timeout=15 \
+--backend-frontname=admin
+
+
+composer create-project --repository-url=https://repo.magento.com/ magento/project-community-edition magento2_test_1
+
+== diable two factors on admin ==
+bin/magento module:disable Magento_TwoFactorAuth

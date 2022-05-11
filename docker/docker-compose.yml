@@ -1,0 +1,19 @@
+version: '2'
+services:
+  php_apache:
+    image: php:7.4-apache
+    container_name: php_74_apache_magento2
+    ports:
+      - '80:80'
+    volumes:
+      - '../src:/var/www/html:rw'
+    mem_limit: '6000m'
+    build:
+      context: ../
+      dockerfile: docker/Dockerfile
+    networks:
+      - docker_network
+
+networks:
+  docker_network:
+    external: true
