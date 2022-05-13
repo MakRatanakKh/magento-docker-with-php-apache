@@ -3,6 +3,8 @@ services:
   php_apache:
     image: php:7.4-apache
     container_name: php_74_apache_magento2
+    env_file:
+      - .env
     ports:
       - '80:80'
     volumes:
@@ -10,10 +12,10 @@ services:
     mem_limit: '6000m'
     build:
       context: ../
-      dockerfile: docker/Dockerfile
+      dockerfile: build/app/Dockerfile
     networks:
-      - docker_network
+      - sabay_docker
 
 networks:
-  docker_network:
+  sabay_docker:
     external: true

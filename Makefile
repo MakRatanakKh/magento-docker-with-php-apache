@@ -22,4 +22,4 @@ down:
 	cd docker && docker-compose down
 
 terminal:
-	cd docker && docker exec -it php_74_apache bash
+	cd docker && docker exec -it php_74_apache_magento2 bash
