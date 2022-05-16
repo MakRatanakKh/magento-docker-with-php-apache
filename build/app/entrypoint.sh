@@ -84,6 +84,7 @@ else
               --db-name="${DB_DATABASE}" \
               --db-user="${DB_USERNAME}" \
               --db-password="${DB_PASSWORD}" \
+              --backend-frontname="${BACKEND_FRONTNAME}" \
               --no-interaction"
 
     # Set the uninstall command
